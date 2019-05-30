@@ -1,0 +1,47 @@
+﻿@model Mvc_PDF.Models.Aluno
+
+@{
+    ViewBag.Title = "Mais Informações";
+}
+<h2>"Mais Informações</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Classe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.alunoID }) |
+    @Html.ActionLink("Voltar a Lista", "Index")
+</p>

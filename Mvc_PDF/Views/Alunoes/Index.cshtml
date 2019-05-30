@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Mvc_PDF.Models.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Alunos Casdastrados</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Classe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Classe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.alunoID }) |
+            @Html.ActionLink("Ver Mais", "Details", new { id=item.alunoID }) |
+            @Html.ActionLink("Remover", "Delete", new { id=item.alunoID })
+        </td>
+    </tr>
+}
+
+</table>
